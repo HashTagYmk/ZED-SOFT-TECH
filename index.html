@@ -343,19 +343,19 @@
                         <div class="contact_content">
                             <div class="col-md-6">
                                 <div class="single_left_contact">
-                                    <form action="#" id="formid">
+                                    <form onsubmit="sendEmail(); reset(); return false; action="#" id="formid">
 
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="name" placeholder="Full Name" required="">
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required="">
                                         </div>
 
                                         <div class="form-group">
-                                            <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="">
                                         </div>
 
 
                                         <div class="form-group">
-                                            <textarea class="form-control" name="message" rows="8" placeholder="Message"></textarea>
+                                            <textarea class="form-control" id="message" name="message" rows="8" placeholder="Message"></textarea>
                                         </div>
 
                                         <div class="center-content">
@@ -450,7 +450,29 @@
 
         <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
         <script src="assets/js/vendor/bootstrap.min.js"></script>
-
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        
+         <script>
+            Function sendEmail(){
+            Email.send({
+            Host : "smtp.gmail.com",
+            Username : "zedsoftt@gmail.com",
+            Password : "Zedsoft@tech",
+            To : 'zedsoftt@gmail.com',
+            From : documnet.getElementById("email").value,
+            Subject : "Solution Enguiry",
+            Body : "Name: " + documnet.getElementById("name").value
+                    + "<br> Email: " +  documnet.getElementById("email").value
+                    + "<br> Message: " +  documnet.getElementById("message").value
+                
+                
+            }).then(
+            message => alert("Message Sent Succesfully")
+            ); }
+        </script>
+        
+        
+ 
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/modernizr.js"></script>
         <script src="assets/js/main.js"></script>
