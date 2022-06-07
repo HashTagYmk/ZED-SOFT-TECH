@@ -365,7 +365,7 @@
                         <div class="contact_content">
                             <div class="col-md-6">
                                 <div class="single_left_contact">
-                                    <form onsubmit="sendEmail(); reset(); return false; action="#" id="formid">
+                                    <form method="post" action="#" id="formid">
 
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required="">
@@ -472,27 +472,6 @@
         <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
         <script src="assets/js/vendor/bootstrap.min.js"></script>
         <script src="https://smtpjs.com/v3/smtp.js"></script>
-        
-         <script>
-            Function sendEmail(){
-            Email.send({
-            Host : "smtp.gmail.com",
-            Username : "zedsoftt@gmail.com",
-            Password : "Zedsoft@tech",
-            To : 'zedsoftt@gmail.com',
-            From : documnet.getElementById("email").value,
-            Subject : "Solution Enguiry",
-            Body : "Name: " + documnet.getElementById("name").value
-                    + "<br> Email: " +  documnet.getElementById("email").value
-                    + "<br> Message: " +  documnet.getElementById("message").value
-                
-                
-            }).then(
-            message => alert("Message Sent Succesfully")
-            ); }
-        </script>
-        
-        
  
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/modernizr.js"></script>
